@@ -1,9 +1,41 @@
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { loveLanguageTypes } from "@shared/schema";
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
 import { Heart, Share2, Home } from "lucide-react";
+
+const loveLanguageTypes = [
+    {
+        type: "words",
+        name: "인정의 말",
+        description:
+            "당신은 따뜻한 말과 진심 어린 표현을 통해 사랑을 느낍니다. 사소해 보이는 한마디 칭찬, '고마워', '수고했어', '나는 네가 자랑스러워' 같은 말이 오랫동안 마음에 남습니다. 상대가 자신의 감정을 솔직하고 다정하게 표현해 줄 때 깊은 안정감과 유대감을 느끼며, 말 한마디가 하루의 기분을 완전히 바꿔줄 수도 있습니다."
+    },
+    {
+        type: "acts",
+        name: "봉사의 행동",
+        description:
+            "당신은 말보다 행동에서 사랑을 느끼는 사람입니다. 힘들 때 묵묵히 곁에 있어주거나, 바쁜 날 대신 무언가를 도와주는 작은 배려가 큰 감동으로 다가옵니다. 상대가 시간을 들이고 노력을 기울여 당신을 위해 행동할 때, 그 안에서 진심과 사랑을 읽어냅니다. 당신에게 사랑은 '해주는 것'입니다."
+    },
+    {
+        type: "gifts",
+        name: "선물",
+        description:
+            "당신에게 선물은 단순한 물건이 아니라 마음의 표현입니다. 값비싼 것이 아니어도 괜찮습니다. 나를 떠올리며 고른 작은 선물, 예상치 못한 깜짝 이벤트 속에서 깊은 애정을 느낍니다. 당신은 그 물건 자체보다 '나를 생각해 준 시간과 마음'을 소중히 여깁니다."
+    },
+    {
+        type: "time",
+        name: "함께하는 시간",
+        description:
+            "당신은 온전히 나에게 집중해 주는 시간을 통해 사랑을 느낍니다. 핸드폰을 내려두고 눈을 맞추며 대화하는 순간, 함께 웃고 이야기 나누는 그 시간이 무엇보다 소중합니다. 짧더라도 진심이 담긴 시간은 당신에게 큰 의미가 되며, 함께한 추억이 관계를 단단하게 만든다고 믿습니다."
+    },
+    {
+        type: "touch",
+        name: "스킨십",
+        description:
+            "당신은 따뜻한 신체 접촉을 통해 사랑을 느낍니다. 손을 잡거나 가볍게 안아주는 행동, 어깨를 토닥여주는 작은 스킨십이 큰 위로가 됩니다. 말이 없어도 체온과 접촉을 통해 감정이 전달된다고 느끼며, 가까이에서 느끼는 온기가 당신에게는 가장 확실한 사랑의 신호입니다."
+    }
+];
 
 export default function Results() {
     const [, setLocation] = useLocation();
